@@ -9,11 +9,11 @@ Object-Storage-Railway
 - Current App Structure
 
 ```
-/high-alch-go
+/Object-Storage-Railway
 │
 ├── buckets                        // Database other configuration
-|   ├── bucket_operator.go           // Getting the object values
-│   └── create_bucket.go           // Getting the object values
+|   ├── bucket_operator.go         // Bucket Operations (Write, Read)
+│   └── create_bucket.go           // Creating the Bucket, Connection and decoding
 |
 |── handlers                        // Logic for API (Eventually will include router)
 |   └── health.go                   // Health Check on API
@@ -27,7 +27,7 @@ Object-Storage-Railway
 |── .env_example                    // Example .env
 |── go.mod                          // configuration setup by Go
 |── go.sum                          // configuration setup by Go
-|── *main.go*                       *// Entry point for app and connecting to Database *
+|── *main.go*                       *// Entry point for app *
 └── README.md                       // This Readme!
     
 ```
@@ -63,15 +63,17 @@ if you need to a set a local env.
 3. get the path of the directory `pwd` 
 `>> documents/projects/hello`
 
+OR just name it based on the directory i.e. object-storage.app
+
 4. init the project 
-`go mod init documents/project/hello`
+`go mod init object-storage.app`
 
 5. check the go.mod file
 `cat go.mod`
 
 6. run `go install`
 
-7. create a hello.go file 
+7. create a main.go file 
 
 add this code snippet
 ```
@@ -86,15 +88,40 @@ func main() {
 ```
 
 8. finally run the file 
-`go run hello.go`
+`go run main.go`
+
+
+# Encoding & Decoding Base64 JSON key.
+- Never commit your json service account details from GCP. 
+- This is just one method to get service accounts to work in Railway for GCP specfically
+
+1. In your terminal run `cat object-storage-railway.json | base64`
+>>> output will be a encoded base64 string copy and use that and .ENV variable or value inside of Railway.
+
+2. Inside the code we have a function that will decode the string at runtime to use the service account permissions. 
+
+```
+func CovertStringToJSON(env_details string) []byte {
+	decoded_json, err := base64.StdEncoding.DecodeString(env_details)
+	if err != nil {
+		panic(err)
+	}
+
+	return decoded_json
+
+}
+```
 
 
 # Project Packages
 - Fiber: https://gofiber.io/
-- Google Cloud: 
+- Google Cloud: https://cloud.google.com
 
 
-# Railway Setup 
+# Railway Setup:
+- Railway: railway.app
+1. Link Git Repo to Railway
+2. Add encoded base64 service account value to the variable of the railway project for this repo. 
 
 
 
