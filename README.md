@@ -98,6 +98,20 @@ func main() {
 1. In your terminal run `cat object-storage-railway.json | base64`
 >>> output will be a encoded base64 string copy and use that and .ENV variable or value inside of Railway.
 
+2. Inside the code we have a function that will decode the string at runtime to use the service account permissions. 
+
+```
+func CovertStringToJSON(env_details string) []byte {
+	decoded_json, err := base64.StdEncoding.DecodeString(env_details)
+	if err != nil {
+		panic(err)
+	}
+
+	return decoded_json
+
+}
+```
+
 
 # Project Packages
 - Fiber: https://gofiber.io/
