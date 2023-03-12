@@ -73,7 +73,7 @@ OR just name it based on the directory i.e. object-storage.app
 
 6. run `go install`
 
-7. create a hello.go file 
+7. create a main.go file 
 
 add this code snippet
 ```
@@ -88,7 +88,15 @@ func main() {
 ```
 
 8. finally run the file 
-`go run hello.go`
+`go run main.go`
+
+
+# Encoding & Decoding Base64 JSON key.
+- Never commit your json service account details from GCP. 
+- This is just one method to get service accounts to work in Railway for GCP specfically
+
+1. In your terminal run `cat object-storage-railway.json | base64`
+>>> output will be a encoded base64 string copy and use that and .ENV variable or value inside of Railway.
 
 
 # Project Packages
@@ -96,7 +104,10 @@ func main() {
 - Google Cloud: https://cloud.google.com
 
 
-# Railway Setup 
+# Railway Setup:
+- Railway: railway.app
+1. Link Git Repo to Railway
+2. Add encoded base64 service account value to the variable of the railway project for this repo. 
 
 
 
