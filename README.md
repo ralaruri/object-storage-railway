@@ -12,8 +12,8 @@ Object-Storage-Railway
 /Object-Storage-Railway
 │
 ├── buckets                        // Database other configuration
-|   ├── bucket_operator.go         // Getting the object values
-│   └── create_bucket.go           // Getting the object values
+|   ├── bucket_operator.go         // Bucket Operations (Write, Read)
+│   └── create_bucket.go           // Creating the Bucket, Connection and decoding
 |
 |── handlers                        // Logic for API (Eventually will include router)
 |   └── health.go                   // Health Check on API
