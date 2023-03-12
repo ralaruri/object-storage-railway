@@ -123,7 +123,8 @@ func CovertStringToJSON(env_details string) []byte {
 # Railway Setup:
 - Railway: railway.app
 1. Link Git Repo to Railway
-2. Add encoded base64 service account value to the variable of the railway project for this repo. 
-
+2. Add encoded base64 service account value to the variable of the railway project for this repo.
+3. Add ENV=PROD in addition to the variables. This allows you to use a .env file locally if you want to test before you deploy to Railway but 
+the beauty of Railway it can be part of your testing & ci/cd stack.
 
 
