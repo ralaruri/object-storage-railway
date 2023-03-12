@@ -12,7 +12,7 @@ Object-Storage-Railway
 /high-alch-go
 │
 ├── buckets                        // Database other configuration
-|   ├── bucket_operator.go           // Getting the object values
+|   ├── bucket_operator.go         // Getting the object values
 │   └── create_bucket.go           // Getting the object values
 |
 |── handlers                        // Logic for API (Eventually will include router)
@@ -27,7 +27,7 @@ Object-Storage-Railway
 |── .env_example                    // Example .env
 |── go.mod                          // configuration setup by Go
 |── go.sum                          // configuration setup by Go
-|── *main.go*                       *// Entry point for app and connecting to Database *
+|── *main.go*                       *// Entry point for app *
 └── README.md                       // This Readme!
     
 ```
