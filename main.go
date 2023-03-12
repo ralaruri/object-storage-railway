@@ -27,7 +27,7 @@ func main() {
 
 	buckets.CreateBucket("object-storage-railway", "food-bucket-dev")
 	buckets.WriteToBucket("food-bucket-dev", "cheese.json")
-	buckets.ReadFromBucket("food-bucket-dev", "2023_03_11_cheese.json")
+	buckets.ReadFromBucket("food-bucket-dev", "2023_03_12_cheese.json")
 	object_creator.DeleteJsonFile()
 
 	app := fiber.New()
