@@ -64,7 +64,7 @@ if you need to a set a local env.
 `>> documents/projects/hello`
 
 4. init the project 
-`go mod init documents/project/hello`
+`go mod init object-storage.app`
 
 5. check the go.mod file
 `cat go.mod`
@@ -91,7 +91,7 @@ func main() {
 
 # Project Packages
 - Fiber: https://gofiber.io/
-- Google Cloud: 
+- Google Cloud: https://cloud.google.com
 
 
 # Railway Setup 
