@@ -63,6 +63,8 @@ if you need to a set a local env.
 3. get the path of the directory `pwd` 
 `>> documents/projects/hello`
 
+OR just name it based on the directory i.e. object-storage.app
+
 4. init the project 
 `go mod init object-storage.app`
 
