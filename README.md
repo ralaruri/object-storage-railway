@@ -9,7 +9,7 @@ Object-Storage-Railway
 - Current App Structure
 
 ```
-/high-alch-go
+/Object-Storage-Railway
 │
 ├── buckets                        // Database other configuration
 |   ├── bucket_operator.go         // Getting the object values
